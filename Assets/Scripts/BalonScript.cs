@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 public class BalonScript : MonoBehaviour
 {
+    
     [SerializeField]private int health=1;
     private void OnCollisionEnter(Collision collision)
     {
@@ -14,8 +16,8 @@ public class BalonScript : MonoBehaviour
     private void TakeDamage()
     {
         health--;
-        if(health <= 0)
-        {
+        if (health <= 0)
+        { 
             DestroySelf();
         }
     }

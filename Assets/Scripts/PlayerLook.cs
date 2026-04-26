@@ -34,12 +34,14 @@ public class PlayerLook : MonoBehaviour
 
     private void HandleMouseLook()
     {
-        Debug.Log(GameInput.Instance.GetMouseInputX().x);
-        rotationX -= GameInput.Instance.GetMouseInputX().y * lockSpeedY*Time.deltaTime;
+        
+        rotationX -= GameInput.Instance.GetMouseInput().y * lockSpeedY*Time.deltaTime;
         rotationX = Mathf.Clamp(rotationX, -upperLookLimit, lowerLookLimit);
         playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-        transform.rotation *= Quaternion.Euler(0, GameInput.Instance.GetMouseInputX().x * lockSpeedX * Time.deltaTime, 0);
+        transform.rotation *= Quaternion.Euler(0, GameInput.Instance.GetMouseInput().x * lockSpeedX * Time.deltaTime, 0);
+       
     }
+    
 
 
 }

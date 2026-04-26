@@ -5,6 +5,8 @@ public class CharacterController : MonoBehaviour
     
     [SerializeField] private GameObject dartPrefab;
     [SerializeField] private GameObject dartSpawnPoint;
+    [SerializeField] private Camera playerCamera;
+    [SerializeField] private float dartSpeed;
     void Start()
     {
         GameInput.Instance.OnShootAction += GameInput_OnShootAction;
@@ -12,6 +14,9 @@ public class CharacterController : MonoBehaviour
 
     private void GameInput_OnShootAction(object sender, System.EventArgs e)
     {
-        Instantiate(dartPrefab, dartSpawnPoint.transform.position, Quaternion.identity);
+        GameObject dart = Instantiate(dartPrefab, dartSpawnPoint.transform.position,playerCamera.transform.rotation);
+        Rigidbody rb = dart.GetComponent<Rigidbody>();
+        rb.AddForce(playerCamera.transform.forward * dartSpeed, ForceMode.Impulse);
+
     }
 }

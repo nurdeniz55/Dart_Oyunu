@@ -19,10 +19,9 @@ public class GameInput : MonoBehaviour
     {
        OnShootAction?.Invoke(this, EventArgs.Empty);
     }
-    public Vector2 GetMouseInputX()
+    public Vector2 GetMouseInput()
     {
         Vector2 inputVector = playerInputActions.Player.LookX.ReadValue<Vector2>();
-        Debug.Log(inputVector);
         return inputVector;
     }
 }
