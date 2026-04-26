@@ -6,8 +6,8 @@ public class PlayerLook : MonoBehaviour
     public bool CanLook { get; private set; } = true;
 
     [Header("Look Parameters")]
-    [SerializeField, Range(1, 10)] private float lockSpeedX = 2f;
-    [SerializeField, Range(1, 10)] private float lockSpeedY = 2f;
+    [SerializeField, Range(1, 10)] private float lockSpeedX = 10f;
+    [SerializeField, Range(1, 10)] private float lockSpeedY = 10f;
     [SerializeField, Range(1, 180)] private float upperLookLimit = 80f;
     [SerializeField, Range(1, 180)] private float lowerLookLimit = 80f;
 
@@ -34,10 +34,11 @@ public class PlayerLook : MonoBehaviour
 
     private void HandleMouseLook()
     {
-        rotationX -= Input.GetAxis("Mouse Y") * lockSpeedY;
+        Debug.Log(GameInput.Instance.GetMouseInputX().x);
+        rotationX -= GameInput.Instance.GetMouseInputX().y * lockSpeedY*Time.deltaTime;
         rotationX = Mathf.Clamp(rotationX, -upperLookLimit, lowerLookLimit);
         playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-        transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lockSpeedX, 0);
+        transform.rotation *= Quaternion.Euler(0, GameInput.Instance.GetMouseInputX().x * lockSpeedX * Time.deltaTime, 0);
     }
 
 
