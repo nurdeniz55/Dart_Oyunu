@@ -13,6 +13,7 @@ public class DartScript : MonoBehaviour
         time += Time.deltaTime;
         if(time > 5)
         {
+            ScoreManager.Instance.AddScore(-20);
             DestroySelf();
         }
     }

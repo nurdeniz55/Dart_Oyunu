@@ -17,7 +17,13 @@ public class BalonScript : MonoBehaviour
     {
         health--;
         if (health <= 0)
-        { 
+        {
+            ScoreManager.Instance.AddScore(100);
+            GameLevel.Instance.DecreaseBalonCount();
+            if (GameLevel.Instance.GetBalonCount() <= 0)
+            {
+                GameManager.instance.StopGame();
+            }
             DestroySelf();
         }
     }
