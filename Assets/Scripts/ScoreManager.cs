@@ -2,15 +2,26 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    int score;
-    void Start()
+    public static ScoreManager Instance { get; private set; }
+    int score=0;
+    int finalScore=0;
+    float timeScore = 100;
+    float time;
+    private void Awake()
     {
-        
+        Instance = this;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        timeScore -= Time.deltaTime;
+    }
+    public void AddScore(int addscore)
+    {
+        score += addscore;
+    }
+    public int getScore()
+    {
+        finalScore = score + (int)timeScore;
+        return finalScore;
     }
 }
