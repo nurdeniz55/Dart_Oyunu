@@ -182,7 +182,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -506,7 +506,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -604,6 +604,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1538899102}
+  - component: {fileID: 1538899103}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -627,6 +628,22 @@ Transform:
   - {fileID: 2005564442}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1538899103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1538899101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 418d4b17cdbdd63409cfed14d0f8591c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lockSpeedX: 10
+  lockSpeedY: 10
+  upperLookLimit: 80
+  lowerLookLimit: 80
 --- !u!1 &2005564441
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,7 +656,6 @@ GameObject:
   - component: {fileID: 2005564446}
   - component: {fileID: 2005564445}
   - component: {fileID: 2005564444}
-  - component: {fileID: 2005564443}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -663,22 +679,6 @@ Transform:
   - {fileID: 330585546}
   m_Father: {fileID: 1538899102}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2005564443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2005564441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 418d4b17cdbdd63409cfed14d0f8591c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lockSpeedX: 2
-  lockSpeedY: 2
-  upperLookLimit: 80
-  lowerLookLimit: 80
 --- !u!136 &2005564444
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -725,7 +725,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
